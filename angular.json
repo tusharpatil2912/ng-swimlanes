@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -99,9 +100,41 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "tp-swimlanes": {
+      "projectType": "library",
+      "root": "projects/tp-swimlanes",
+      "sourceRoot": "projects/tp-swimlanes/src",
+      "prefix": "tp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tp-swimlanes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tp-swimlanes/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tp-swimlanes/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tp-swimlanes/src/test.ts",
+            "tsConfig": "projects/tp-swimlanes/tsconfig.spec.json",
+            "karmaConfig": "projects/tp-swimlanes/karma.conf.js"
           }
         }
       }

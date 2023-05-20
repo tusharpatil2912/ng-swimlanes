@@ -1,0 +1,27 @@
+<div class="container">
+    <div style="margin-bottom: 10px; display: flex; justify-content: space-between; margin-left: 5px; margin-right: 5px;">
+        <div>
+            # {{ItemDetails.id}}
+        </div>
+        <div style="font-size: smaller;">
+            <mat-icon style="transform: translateY(3px); font-size: medium;">today</mat-icon> ETA: {{ItemDetails.date}}
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: fit-content;">
+        <p class="taskName" *ngIf="ItemDetails.name">{{ItemDetails.name}}</p>
+        <p *ngIf="ItemDetails.description">{{ItemDetails.description}}</p>
+    </div>   
+    <div style="display: flex; justify-content: space-between;margin-left: 5px;">
+        <div>
+            <mat-icon style="transform: translateY(6px)">account_circle</mat-icon> {{ItemDetails.user}}
+        </div>
+        <div>
+            <button mat-button (click)="onClick()">
+                <mat-icon>border_color</mat-icon>
+            </button>
+        </div>      
+    </div>
+    <div style="display: flex; align-items: center; justify-content: flex-start; flex-flow: wrap;" *ngIf="ItemDetails.tags">
+        <button mat-raised-button color="primary" *ngFor="let tag of ItemDetails.tags">{{tag}}</button>
+    </div>
+</div>

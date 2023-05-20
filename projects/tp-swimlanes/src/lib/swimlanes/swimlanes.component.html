@@ -1,0 +1,25 @@
+<div class="container">
+    <!-- <div class="filter-div">
+        <form #filterForm="ngForm">
+            Filter : 
+            <label for="user">&nbsp; User &nbsp;</label>
+            <select name="user" id="user" style="margin-right: 1rem;" [(ngModel)]="userFilter" (change)="filerByUser()">
+                <option value="">--Select User--</option>
+                <option *ngFor="let user of users" [value]="user">{{user}}</option>
+            </select>
+        </form>
+    </div> -->
+    <div cdkDropListGroup class="main-container">
+        <div class="lane-container" style="border-style:outset; text-align: center;"
+            *ngFor="let lane of swimlanesOptions">
+            <div class="laneHeading" [ngStyle]="{'background-color':lane.headerColor, 'color':lane.textColor }">{{lane.label}}</div>
+            <div class="dropList" cdkDropList [cdkDropListData]="sortedData[lane.id]" (cdkDropListDropped)="drop($event,lane.label)">
+                <div class="laneItemBox" *ngFor="let item of sortedData[lane.id]" cdkDrag
+                    [ngStyle]="{'border': 'solid','border-width': '1px', 'border-inline-start-color': lane.headerColor, 'border-inline-start-width': '8px','margin-bottom': '5px','border-radius': '5px'}">
+                    <tp-swimlane-card [ItemDetails]="item"
+                    (onCardClick)="onCardClick($event,lane.label)"></tp-swimlane-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
