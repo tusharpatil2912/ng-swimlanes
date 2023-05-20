@@ -1,8 +1,6 @@
 
 # @tusharp/ng-swimlanes
 
-## Description
-
 A customizable Angular library that displays items in a swimlanes format using cards. The library provides options to define the swimlanes layout and supports click and drag-and-drop events on the cards.
 
 ## Installation
@@ -73,7 +71,8 @@ export class MyComponent {
 
 The `swimlanesOptions` input accepts an object that defines the swimlanes layout. You can customize the appearance and behavior of the swimlanes using the following options:
 
-- `swimlanesOptions = [
+```typescript
+swimlanesOptions = [
         {
           id:"2",
           label:'Backlog',
@@ -98,11 +97,12 @@ The `swimlanesOptions` input accepts an object that defines the swimlanes layout
           headerColor: 'darkgreen',
           textColor:'white'
         }
-      ];`
-
+      ];
+```
 The 'data' input accepts an array in below format:
 
-- `data = [
+```typescript
+data = [
       {
         id: 1,
         name: 'test',
@@ -139,7 +139,8 @@ The 'data' input accepts an array in below format:
         statusId:"4",
         tags: ['T4rail 2']           
       }
-    ];`
+    ];
+```
 
 ## Events
 
